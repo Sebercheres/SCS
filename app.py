@@ -59,5 +59,5 @@ result_df.set_index('result')
 result_df
 
 mode = pd.DataFrame(df.Bob.mode(), columns=['mode'])
-st.write(df.mode())
+st.write(mode)
 
