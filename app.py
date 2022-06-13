@@ -40,7 +40,7 @@ st.bar_chart(df.Bob)
 
 fig = go.Figure(
     go.Pie(
-    labels = df.Bob,
+    labels = df.Bob.value_counts().index,
     values = df.Bob.value_counts(),
     hoverinfo = "label+percent",
     textinfo = "value"
@@ -59,5 +59,5 @@ result_df.set_index('result')
 result_df
 
 mode = pd.DataFrame(df.Bob.mode(), columns=['mode'])
-st.write(mode)
+st.write(df.mode())
 
