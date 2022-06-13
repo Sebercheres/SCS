@@ -50,11 +50,14 @@ st.write("""### Pie Chart""")
 st.plotly_chart(fig)
 
 result_df = pd.DataFrame()
-result_df['result'] = ['mean', 'median', 'max', 'min']
+result_df['result'] = ['mean', 'median', 'max', 'min', 'variance', 'std', 'range']
 
-result_df['number'] = [df.Bob.mean(), df.Bob.median(), df.Bob.max(),df.Bob.min()]
+result_df['number'] = [df.Bob.mean(), df.Bob.median(), df.Bob.max(),df.Bob.min(), df.Bob.var(), df.Bob.std(), df.Bob.max()-df.Bob.min()]
 
 st.write("""### Describe""")
 result_df.set_index('result')
 result_df
+
+mode = pd.DataFrame(df.Bob.mode(), columns=['mode'])
+st.write(mode)
 
